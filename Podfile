@@ -5,8 +5,12 @@ target 'newstest_Owen' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'Moya', '~> 15.0'
-  pod 'RealmSwift', '~> 10.21.1'
-  pod 'RxSwift', '~> 6.5.0'
+  pod 'Moya'
+  pod 'Moya/RxSwift'
+  pod 'RealmSwift'
+  pod 'RxSwift'
+  pod 'SwiftyJSON'
+  pod 'RxCocoa'
 
+  
 end

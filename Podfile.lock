@@ -4,17 +4,29 @@ PODS:
     - Moya/Core (= 15.0.0)
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
+  - Moya/RxSwift (15.0.0):
+    - Moya/Core
+    - RxSwift (~> 6.0)
   - Realm (10.21.1):
     - Realm/Headers (= 10.21.1)
   - Realm/Headers (10.21.1)
   - RealmSwift (10.21.1):
     - Realm (= 10.21.1)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
+  - SwiftyJSON (5.0.1)
 
 DEPENDENCIES:
-  - Moya (~> 15.0)
-  - RealmSwift (~> 10.21.1)
-  - RxSwift (~> 6.5.0)
+  - Moya
+  - Moya/RxSwift
+  - RealmSwift
+  - RxCocoa
+  - RxSwift
+  - SwiftyJSON
 
 SPEC REPOS:
   trunk:
@@ -22,15 +34,21 @@ SPEC REPOS:
     - Moya
     - Realm
     - RealmSwift
+    - RxCocoa
+    - RxRelay
     - RxSwift
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   Realm: 44b41c3ae39e3ecfded71a04434bfde066c7b317
   RealmSwift: dbf9a4eb06e0c929d51c4ef2e8f951bca541feab
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
 
-PODFILE CHECKSUM: a00e43a32bad16edee966ed69401c85a16789260
+PODFILE CHECKSUM: 67355e217ad144713a08d387ed03fb2804f28d49
 
 COCOAPODS: 1.11.2

@@ -14,6 +14,9 @@
 		7977B508279A8F7000F2F58A /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7977B507279A8F7000F2F58A /* NewsViewModel.swift */; };
 		7977B50F279A917B00F2F58A /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7977B50E279A917B00F2F58A /* APIService.swift */; };
 		7977B511279A936600F2F58A /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7977B510279A936600F2F58A /* NewsModel.swift */; };
+		7977B513279B9E6900F2F58A /* Observable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7977B512279B9E6900F2F58A /* Observable+.swift */; };
+		7977B515279BA63B00F2F58A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7977B514279BA63B00F2F58A /* Config.swift */; };
+		7977B517279BA98A00F2F58A /* RxMoya+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7977B516279BA98A00F2F58A /* RxMoya+.swift */; };
 		79CBC1DF279A48B000FADCCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CBC1DE279A48B000FADCCA /* AppDelegate.swift */; };
 		79CBC1E1279A48B000FADCCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CBC1E0279A48B000FADCCA /* SceneDelegate.swift */; };
 		79CBC1E6279A48B000FADCCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79CBC1E4279A48B000FADCCA /* Main.storyboard */; };
@@ -31,6 +34,9 @@
 		7977B507279A8F7000F2F58A /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		7977B50E279A917B00F2F58A /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		7977B510279A936600F2F58A /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		7977B512279B9E6900F2F58A /* Observable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+.swift"; sourceTree = "<group>"; };
+		7977B514279BA63B00F2F58A /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		7977B516279BA98A00F2F58A /* RxMoya+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxMoya+.swift"; sourceTree = "<group>"; };
 		79CBC1DB279A48B000FADCCA /* newstest_Owen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newstest_Owen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79CBC1DE279A48B000FADCCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79CBC1E0279A48B000FADCCA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,12 +94,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		7977B50D279A90F100F2F58A /* Networking */ = {
+		7977B50D279A90F100F2F58A /* Tools */ = {
 			isa = PBXGroup;
 			children = (
 				7977B50E279A917B00F2F58A /* APIService.swift */,
+				7977B512279B9E6900F2F58A /* Observable+.swift */,
+				7977B514279BA63B00F2F58A /* Config.swift */,
+				7977B516279BA98A00F2F58A /* RxMoya+.swift */,
 			);
-			path = Networking;
+			path = Tools;
 			sourceTree = "<group>";
 		};
 		79CBC1D2279A48B000FADCCA = {
@@ -117,7 +126,7 @@
 		79CBC1DD279A48B000FADCCA /* newstest_Owen */ = {
 			isa = PBXGroup;
 			children = (
-				7977B50D279A90F100F2F58A /* Networking */,
+				7977B50D279A90F100F2F58A /* Tools */,
 				7977B509279A8F7D00F2F58A /* Model */,
 				7977B50A279A8F8400F2F58A /* View */,
 				7977B50B279A8F9C00F2F58A /* ViewModel */,
@@ -157,7 +166,7 @@
 				79CBC1D7279A48B000FADCCA /* Sources */,
 				79CBC1D8279A48B000FADCCA /* Frameworks */,
 				79CBC1D9279A48B000FADCCA /* Resources */,
-				70987BF5983D9C5A292808A9 /* [CP] Embed Pods Frameworks */,
+				36AC5371C51F87B04692612F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -238,7 +247,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		70987BF5983D9C5A292808A9 /* [CP] Embed Pods Frameworks */ = {
+		36AC5371C51F87B04692612F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -264,11 +273,14 @@
 			files = (
 				7977B511279A936600F2F58A /* NewsModel.swift in Sources */,
 				7977B501279A7C6E00F2F58A /* NewsTableViewController.swift in Sources */,
+				7977B515279BA63B00F2F58A /* Config.swift in Sources */,
 				7977B508279A8F7000F2F58A /* NewsViewModel.swift in Sources */,
 				7977B505279A885B00F2F58A /* NewTableViewCell.swift in Sources */,
+				7977B513279B9E6900F2F58A /* Observable+.swift in Sources */,
 				79CBC1DF279A48B000FADCCA /* AppDelegate.swift in Sources */,
 				7977B50F279A917B00F2F58A /* APIService.swift in Sources */,
 				79CBC1E1279A48B000FADCCA /* SceneDelegate.swift in Sources */,
+				7977B517279BA98A00F2F58A /* RxMoya+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

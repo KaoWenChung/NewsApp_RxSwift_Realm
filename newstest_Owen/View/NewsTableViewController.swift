@@ -6,12 +6,30 @@
 //
 
 import UIKit
+import Moya
+import RxSwift
+import RxCocoa
 
 class NewsTableViewController: UITableViewController {
-        
+    private let viewModel: NewsViewModel = NewsViewModel()
+    let disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-        NewsRepository.getNews()
+        viewModel.loadData(NewsModel.self)
+            .catch({ (error) -> Observable<NewsModel?> in
+                print(error.localizedDescription)
+                return Observable.empty()
+            }).subscribe { test in
+                print(test)
+            } onError: { error in
+                print(error)
+            } onCompleted: {
+                print("tewtetwet")
+            } onDisposed: {
+                print("sdfsdfsdf")
+            }
+//            .bindTo(self.rx.tableView)
+//            .addDisposableTo(disposeBag)
     }
 
     // MARK: - Table view data source

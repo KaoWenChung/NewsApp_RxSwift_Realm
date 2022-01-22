@@ -6,21 +6,6 @@
 //
 import Moya
 
-class NewsRepository {
-    private init() {}
-    static func getNews() {
-        let provider = MoyaProvider<News>()
-        provider.request(.articles) { result in
-            switch result {
-            case .success(let value):
-                print(value)
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-}
-
 enum News {
     static private let apiKey: String = "a5303f9195f04a13b7cb014c207223fc"
     case articles
