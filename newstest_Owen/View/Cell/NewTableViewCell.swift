@@ -6,14 +6,22 @@
 //
 
 import UIKit
+import Kingfisher
 
-class NewTableViewCell: UITableViewCell {
-
+final class NewTableViewCell: UITableViewCell {
     @IBOutlet weak private var newsImageView: UIImageView!
     @IBOutlet weak private var newsContentLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    }
+    func setCell(_ data: ArticleModel) {
+        newsImageView.kf.indicatorType = .activity
+        if let urlStr = data.urlToImage, !urlStr.isEmpty {
+            newsImageView.kf.setImage(with: URL(string: urlStr))
+        } else {
+            newsImageView.image = UIImage(named: "error_CloudIcon")
+        }
+        newsContentLabel.text = data.content ?? "No info"
     }
     
 }

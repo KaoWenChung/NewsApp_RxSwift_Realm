@@ -4,9 +4,11 @@
 //
 //  Created by owenkao on 2022/1/21.
 //
+
 import Moya
 
 enum News {
+    /// my API key
     static private let apiKey: String = "a5303f9195f04a13b7cb014c207223fc"
     case articles
 }

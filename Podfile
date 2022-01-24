@@ -9,8 +9,8 @@ target 'newstest_Owen' do
   pod 'Moya/RxSwift'
   pod 'RealmSwift'
   pod 'RxSwift'
-  pod 'SwiftyJSON'
   pod 'RxCocoa'
-
+  pod 'SwiftyJSON'
+  pod 'Kingfisher'
   
 end

@@ -10,69 +10,59 @@ import RxSwift
 import RealmSwift
 
 extension MoyaProvider {
-    func offLineCacheRequest(token: Target) -> Observable<Moya.Response> {
+    final func cacheRequest(token: Target) -> Observable<Moya.Response> {
         return Observable.create({[weak self] (observer) -> Disposable in
-            //拼接成为数据库的key
             var key = token.baseURL.absoluteString + token.path
-            if case .requestParameters(let param, _) = token.task {
-                key += (self?.toJSONString(dict: param))!
+            if case .requestParameters(let param, _) = token.task, let requestParam = self?.toJSONString(dict: param) {
+                key += requestParam
             }
             DispatchQueue.main.async {
-                let realm = try! Realm()
-                print(realm.configuration.fileURL)
-                //设置过滤条件
-                let pre = NSPredicate(format: "key = %@",key)
-                //过滤出来的数据(为数组)
-                let ewresponse = realm.objects(ResultModel.self).filter(pre)
-                //先看有无缓存的话，如果有数据，数组即不为0
-                if ewresponse.count != 0 {
-                    //因为设置了过滤条件，只会出现一个数据,直接取
-                    let filterResult = ewresponse[0]
-                    //重新创建成Response发送出去
-                    let creatResponse = Response(statusCode: filterResult.statuCode, data: filterResult.data!)
-                    observer.onNext(creatResponse)
+                do {
+                    let realm = try Realm()
+                    let pre = NSPredicate(format: "key = %@",key)
+                    let ewresponse = realm.objects(ResultModel.self).filter(pre)
+                    if !ewresponse.isEmpty, let filterResult = ewresponse.first, let data = filterResult.data {
+                        let creatResponse = Response(statusCode: filterResult.statuCode, data: data)
+                        observer.onNext(creatResponse)
+                    }
+                } catch {
+                    print(error.localizedDescription)
                 }
+                
             }
-            //进行正常的网络请求
             let cancellableToken = self?.request(token) { result in
                 switch result {
                 case let .success(response):
                     observer.onNext(response)
                     observer.onCompleted()
-                    //建立数据库模型并赋值
                     let model = ResultModel()
                     model.data = response.data
                     model.key = key
                     model.statuCode = response.statusCode
-                    //写入数据库(注意:update参数,如果在设置模型的时候没有设置主键的话，这里是不能使用update参数的,update参数可以保证如果有相同主键的数据就直接更新数据而不是新建)
                     DispatchQueue.main.async {
-                        let realm = try! Realm()
-                        try! realm.write {
-                            realm.add(model, update: .all)
+                        do {
+                            let realm = try Realm()
+                            try realm.write {
+                                realm.add(model, update: .all)
+                            }
+                        } catch {
+                            print(error.localizedDescription)
                         }
                     }
-                    
                 case let .failure(error):
                     observer.onError(error)
                 }
-                
             }
             return Disposables.create {
                 cancellableToken?.cancel()
             }
-            
         })
     }
-    
-    
-    /// 字典转JSON字符串(用于设置数据库key的唯一性)
-    func toJSONString(dict: Dictionary<String, Any>?)->String{
-        
-        let data = try? JSONSerialization.data(withJSONObject: dict!, options: JSONSerialization.WritingOptions.prettyPrinted)
-        
-        let strJson = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-        
-        return strJson! as String
-        
+    /// Convert Dictionary to JSON string
+    final func toJSONString(dict: Dictionary<String, Any>?) -> String {
+        guard let _dict = dict,
+              let _data = try? JSONSerialization.data(withJSONObject: _dict, options: JSONSerialization.WritingOptions.prettyPrinted),
+              let strJson = NSString(data: _data, encoding: String.Encoding.utf8.rawValue) else { return "" }
+        return strJson as String
     }
 }

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		054DD3824AB1E162B24FBAF5 /* Pods_newstest_Owen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 190894C1D30BF3641A2A802E /* Pods_newstest_Owen.framework */; };
-		7977B501279A7C6E00F2F58A /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7977B4FF279A7C6E00F2F58A /* NewsTableViewController.swift */; };
 		7977B505279A885B00F2F58A /* NewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7977B503279A885B00F2F58A /* NewTableViewCell.swift */; };
 		7977B506279A885B00F2F58A /* NewTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7977B504279A885B00F2F58A /* NewTableViewCell.xib */; };
 		7977B508279A8F7000F2F58A /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7977B507279A8F7000F2F58A /* NewsViewModel.swift */; };
@@ -17,6 +16,7 @@
 		7977B513279B9E6900F2F58A /* Observable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7977B512279B9E6900F2F58A /* Observable+.swift */; };
 		7977B515279BA63B00F2F58A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7977B514279BA63B00F2F58A /* Config.swift */; };
 		7977B517279BA98A00F2F58A /* RxMoya+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7977B516279BA98A00F2F58A /* RxMoya+.swift */; };
+		79A8FD70279E44CA000E1BC1 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A8FD6F279E44CA000E1BC1 /* NewsViewController.swift */; };
 		79CBC1DF279A48B000FADCCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CBC1DE279A48B000FADCCA /* AppDelegate.swift */; };
 		79CBC1E1279A48B000FADCCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79CBC1E0279A48B000FADCCA /* SceneDelegate.swift */; };
 		79CBC1E6279A48B000FADCCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79CBC1E4279A48B000FADCCA /* Main.storyboard */; };
@@ -28,7 +28,6 @@
 		190894C1D30BF3641A2A802E /* Pods_newstest_Owen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_newstest_Owen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3462323EE4C7FB1D5A602EE4 /* Pods-newstest_Owen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newstest_Owen.debug.xcconfig"; path = "Target Support Files/Pods-newstest_Owen/Pods-newstest_Owen.debug.xcconfig"; sourceTree = "<group>"; };
 		4D0C544C07446CD4E29DDB94 /* Pods-newstest_Owen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-newstest_Owen.release.xcconfig"; path = "Target Support Files/Pods-newstest_Owen/Pods-newstest_Owen.release.xcconfig"; sourceTree = "<group>"; };
-		7977B4FF279A7C6E00F2F58A /* NewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
 		7977B503279A885B00F2F58A /* NewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTableViewCell.swift; sourceTree = "<group>"; };
 		7977B504279A885B00F2F58A /* NewTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewTableViewCell.xib; sourceTree = "<group>"; };
 		7977B507279A8F7000F2F58A /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
@@ -37,6 +36,7 @@
 		7977B512279B9E6900F2F58A /* Observable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+.swift"; sourceTree = "<group>"; };
 		7977B514279BA63B00F2F58A /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		7977B516279BA98A00F2F58A /* RxMoya+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RxMoya+.swift"; sourceTree = "<group>"; };
+		79A8FD6F279E44CA000E1BC1 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		79CBC1DB279A48B000FADCCA /* newstest_Owen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = newstest_Owen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79CBC1DE279A48B000FADCCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79CBC1E0279A48B000FADCCA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,7 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				7977B50C279A8FA700F2F58A /* Cell */,
-				7977B4FF279A7C6E00F2F58A /* NewsTableViewController.swift */,
+				79A8FD6F279E44CA000E1BC1 /* NewsViewController.swift */,
 				79CBC1E4279A48B000FADCCA /* Main.storyboard */,
 				79CBC1E9279A48B200FADCCA /* LaunchScreen.storyboard */,
 			);
@@ -166,13 +166,15 @@
 				79CBC1D7279A48B000FADCCA /* Sources */,
 				79CBC1D8279A48B000FADCCA /* Frameworks */,
 				79CBC1D9279A48B000FADCCA /* Resources */,
-				36AC5371C51F87B04692612F /* [CP] Embed Pods Frameworks */,
+				BA8D4EEE4A43ECBE45C2AB5E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = newstest_Owen;
+			packageProductDependencies = (
+			);
 			productName = newstest_Owen;
 			productReference = 79CBC1DB279A48B000FADCCA /* newstest_Owen.app */;
 			productType = "com.apple.product-type.application";
@@ -201,6 +203,8 @@
 				Base,
 			);
 			mainGroup = 79CBC1D2279A48B000FADCCA;
+			packageReferences = (
+			);
 			productRefGroup = 79CBC1DC279A48B000FADCCA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -247,7 +251,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		36AC5371C51F87B04692612F /* [CP] Embed Pods Frameworks */ = {
+		BA8D4EEE4A43ECBE45C2AB5E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -272,9 +276,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7977B511279A936600F2F58A /* NewsModel.swift in Sources */,
-				7977B501279A7C6E00F2F58A /* NewsTableViewController.swift in Sources */,
 				7977B515279BA63B00F2F58A /* Config.swift in Sources */,
 				7977B508279A8F7000F2F58A /* NewsViewModel.swift in Sources */,
+				79A8FD70279E44CA000E1BC1 /* NewsViewController.swift in Sources */,
 				7977B505279A885B00F2F58A /* NewTableViewCell.swift in Sources */,
 				7977B513279B9E6900F2F58A /* Observable+.swift in Sources */,
 				79CBC1DF279A48B000FADCCA /* AppDelegate.swift in Sources */,
