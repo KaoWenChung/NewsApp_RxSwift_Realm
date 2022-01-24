@@ -1,4 +1,5 @@
 # newsTest
+Notice: Run pod install before build this project.
 ## Progress
 I had never used RxSwift and Moya before. I spent a bit of time in study how to use each of them and how to use them together.
 ### This project used the following technologies:
