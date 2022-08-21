@@ -58,6 +58,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21AF4C0528B28DBD00AADA8B /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7977B516279BA98A00F2F58A /* RxMoya+.swift */,
+				7977B512279B9E6900F2F58A /* Observable+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		7977B509279A8F7D00F2F58A /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,9 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				7977B50E279A917B00F2F58A /* APIService.swift */,
-				7977B512279B9E6900F2F58A /* Observable+.swift */,
 				7977B514279BA63B00F2F58A /* Config.swift */,
-				7977B516279BA98A00F2F58A /* RxMoya+.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -126,6 +133,7 @@
 		79CBC1DD279A48B000FADCCA /* newstest_Owen */ = {
 			isa = PBXGroup;
 			children = (
+				21AF4C0528B28DBD00AADA8B /* Extension */,
 				7977B50D279A90F100F2F58A /* Tools */,
 				7977B509279A8F7D00F2F58A /* Model */,
 				7977B50A279A8F8400F2F58A /* View */,
