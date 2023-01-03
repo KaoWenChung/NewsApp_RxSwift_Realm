@@ -21,7 +21,7 @@ final class NewTableViewCell: UITableViewCell {
         } else {
             newsImageView.image = UIImage(named: "error_CloudIcon")
         }
-        newsContentLabel.text = data.content ?? "No info"
+        newsContentLabel.text = data.title ?? "No info"
     }
     
 }
