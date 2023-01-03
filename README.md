@@ -1,5 +1,6 @@
 # newsTest
 Notice: Run pod install before build this project.
+Then open "newstest_Owen.xcworkspace" in the project folder.
 
 ### This project used the following technologies:
 - Moya
@@ -11,6 +12,3 @@ Notice: Run pod install before build this project.
 - Dependency injection
 - MVVM
 - offline storage
-
-<br/>
-Reference Article: https://www.jianshu.com/p/f4b8f4c27069

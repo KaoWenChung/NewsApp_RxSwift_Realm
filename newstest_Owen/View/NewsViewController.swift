@@ -11,6 +11,9 @@ import RxSwift
 import RxCocoa
 
 final class NewsViewController: UIViewController {
+    private enum Content {
+        static let heightForTableViewCell: CGFloat = 140.0
+    }
     @IBOutlet weak private var tableView: UITableView!
     private let viewModel: NewsViewModel = NewsViewModel()
     private let disposeBag = DisposeBag()
@@ -30,6 +33,6 @@ final class NewsViewController: UIViewController {
 }
 extension NewsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 140
+        return Content.heightForTableViewCell
     }
 }

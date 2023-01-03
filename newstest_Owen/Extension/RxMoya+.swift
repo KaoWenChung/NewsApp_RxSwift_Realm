@@ -10,7 +10,7 @@ import RxSwift
 import RealmSwift
 
 extension MoyaProvider {
-    final func cacheRequest(token: Target) -> Observable<Moya.Response> {
+    func cacheRequest(token: Target) -> Observable<Moya.Response> {
         return Observable.create({[weak self] (observer) -> Disposable in
             var key = token.baseURL.absoluteString + token.path
             if case .requestParameters(let param, _) = token.task, let requestParam = self?.toJSONString(dict: param) {
@@ -59,7 +59,7 @@ extension MoyaProvider {
         })
     }
     /// Convert Dictionary to JSON string
-    final func toJSONString(dict: Dictionary<String, Any>?) -> String {
+    func toJSONString(dict: Dictionary<String, Any>?) -> String {
         guard let _dict = dict,
               let _data = try? JSONSerialization.data(withJSONObject: _dict, options: JSONSerialization.WritingOptions.prettyPrinted),
               let strJson = NSString(data: _data, encoding: String.Encoding.utf8.rawValue) else { return "" }
